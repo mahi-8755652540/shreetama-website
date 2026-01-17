@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import aboutImage from '@/assets/about-craftsmanship.jpg';
@@ -10,13 +9,7 @@ export default function BrandStory() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative order-2 lg:order-1"
-          >
+          <div className="relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
                 src={aboutImage}
@@ -26,16 +19,10 @@ export default function BrandStory() {
             </div>
             {/* Decorative element */}
             <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-copper/10 rounded-full -z-10" />
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2"
-          >
+          <div className="order-1 lg:order-2">
             <span className="text-copper font-medium text-sm tracking-widest uppercase mb-4 block">
               Our Story
             </span>
@@ -61,7 +48,7 @@ export default function BrandStory() {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

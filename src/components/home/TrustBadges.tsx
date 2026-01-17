@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ShieldCheck, Truck, Award, RefreshCcw } from 'lucide-react';
 
 const badges = [
@@ -30,18 +29,11 @@ export default function TrustBadges() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {badges.map((badge, index) => (
-            <motion.div
-              key={badge.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
-            >
+            <div key={badge.title} className="text-center">
               <badge.icon className="w-10 h-10 mx-auto mb-3 text-copper-light" />
               <h4 className="font-serif font-semibold mb-1">{badge.title}</h4>
               <p className="text-sm text-cream/60">{badge.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

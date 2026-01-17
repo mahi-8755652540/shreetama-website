@@ -3,6 +3,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: hsl(var(--background, 40, 20%, 98%));
+  color: hsl(var(--foreground, 30, 10%, 15%));
 }
 
 .logo {

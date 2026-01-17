@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ShoppingBag, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Product } from '@/data/products';
@@ -19,13 +18,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group"
-    >
+    <div className="group">
       <Link to={`/product/${product.slug}`} className="block">
         <div className="relative aspect-square overflow-hidden rounded-lg bg-cream-dark mb-4">
           {/* Badges */}
@@ -84,6 +77,6 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }

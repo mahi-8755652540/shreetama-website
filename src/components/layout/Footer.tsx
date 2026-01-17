@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="text-2xl font-serif font-bold text-gradient-copper">
+              <span className="text-2xl font-serif font-bold text-copper-light">
                 Shreetama
               </span>
             </Link>

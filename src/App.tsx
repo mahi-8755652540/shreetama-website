@@ -13,19 +13,17 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const getBasename = () => {
-  if (import.meta.env.MODE === 'production') {
-    return '/shreetama-website/';
-  }
-  return '/';
-};
+// Determine basename based on environment
+const basename = typeof window !== 'undefined' && window.location.pathname.includes('shreetama-website') 
+  ? '/shreetama-website/' 
+  : '/';
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={getBasename()}>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/shop" element={<Shop />} />

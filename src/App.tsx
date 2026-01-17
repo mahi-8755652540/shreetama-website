@@ -13,12 +13,19 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const getBasename = () => {
+  if (import.meta.env.MODE === 'production') {
+    return '/shreetama-website/';
+  }
+  return '/';
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/shreetama-website/">
+      <BrowserRouter basename={getBasename()}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/shop" element={<Shop />} />
